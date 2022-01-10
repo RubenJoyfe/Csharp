@@ -1,0 +1,79 @@
+﻿<Window x:Class="MasterMindTarde.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MasterMindTarde"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="800" Width="600">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="5*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <StackPanel Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2">
+            <StackPanel.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF2644CB"/>
+                    <GradientStop Color="#FF18045F" Offset="1"/>
+                </LinearGradientBrush>
+            </StackPanel.Background>
+            <TextBlock HorizontalAlignment="Center"
+                       VerticalAlignment="Stretch"
+                       Text="Master Mind_" FontSize="72" FontFamily="MS Gothic" Foreground="#FFFFEEB4"
+                       Margin="0,20,0,0"/>
+        </StackPanel>
+        <StackPanel Grid.Row="1" Grid.Column="0">
+            <StackPanel.Background>
+                <ImageBrush ImageSource="/fondo_izq.png"/>
+            </StackPanel.Background>
+            <ListBox x:Name="lb_intentos" ItemsSource="{Binding Historico}"
+                     ItemTemplate="{StaticResource PlantillaIntentos}"
+                     IsSynchronizedWithCurrentItem="True"
+                     Background="#4C030038"
+                     />
+        </StackPanel>
+        <StackPanel Grid.Row="1" Grid.Column="1">
+            <StackPanel.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF0051FF"/>
+                    <GradientStop Color="#FF230F3C" Offset="1"/>
+                </LinearGradientBrush>
+            </StackPanel.Background>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,50">
+                <TextBox x:Name="tb_celda_0" FontSize="35" Foreground="NavajoWhite" TextAlignment="Center" VerticalContentAlignment="Center" Text="0" Width="50" Height="50" Margin="5" Background="#4C000000"></TextBox>
+                <TextBox x:Name="tb_celda_1" FontSize="35" Foreground="NavajoWhite" TextAlignment="Center" VerticalContentAlignment="Center" Text="0" Width="50" Height="50" Margin="5" Background="#4C000000"></TextBox>
+                <TextBox x:Name="tb_celda_2" FontSize="35" Foreground="NavajoWhite" TextAlignment="Center" VerticalContentAlignment="Center" Text="0" Width="50" Height="50" Margin="5" Background="#4C000000"></TextBox>
+                <TextBox x:Name="tb_celda_3" FontSize="35" Foreground="NavajoWhite" TextAlignment="Center" VerticalContentAlignment="Center" Text="0" Width="50" Height="50" Margin="5" Background="#4C000000"></TextBox>
+                <TextBox x:Name="tb_celda_4" FontSize="35" Foreground="NavajoWhite" TextAlignment="Center" VerticalContentAlignment="Center" Text="0" Width="50" Height="50" Margin="5" Background="#4C000000"></TextBox>
+            </StackPanel>
+            <Button Content="COMPROBAR"
+                    Click="Comprobar"
+                    FontSize="30"
+                    Foreground="NavajoWhite"
+                    Template="{StaticResource EstiloBoton}"/>
+        </StackPanel>
+        <StackPanel Grid.Row="2" Grid.Column="0" Background="Black">
+            <TextBlock x:Name="tb_consola"
+                       Text="Bienvenid@" Foreground="LawnGreen" FontSize="18"
+                       TextWrapping="Wrap"
+                       TextAlignment="Left"
+                       FontFamily="Courier New"
+                       Margin="5,5,0,0"
+                       />
+        </StackPanel>
+        <StackPanel Grid.Row="2" Grid.Column="1" Background="Black">
+            <TextBlock x:Name="tb_version"
+                       Text="v0.0.1" Foreground="NavajoWhite" FontSize="18"
+                       TextAlignment="Right"
+                       FontFamily="Courier New"
+                       Margin="0,10,10,0"
+                       />
+        </StackPanel>
+    </Grid>
+</Window>

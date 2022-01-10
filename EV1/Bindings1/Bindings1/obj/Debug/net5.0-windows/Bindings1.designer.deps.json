@@ -1,0 +1,21 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v5.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v5.0": {
+      "Microsoft.TeamFoundationServer.ExtendedClient/16.170.0": {}
+    }
+  },
+  "libraries": {
+    "Microsoft.TeamFoundationServer.ExtendedClient/16.170.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-nIDK6FU6vU8cMmRs7GOffAfZIFmzSO7G3IECZfkUZv4GShaniy8aDSPkLd56l75cQA5QLBK9en236QXF7lqXiA==",
+      "path": "microsoft.teamfoundationserver.extendedclient/16.170.0",
+      "hashPath": "microsoft.teamfoundationserver.extendedclient.16.170.0.nupkg.sha512"
+    }
+  }
+}

@@ -1,0 +1,41 @@
+﻿<Window x:Class="AccDatosB.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AccDatosB"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+
+    <Grid>  
+         <Grid.ColumnDefinitions>  
+             <ColumnDefinition/>  
+             <ColumnDefinition Width="3*"/>  
+         </Grid.ColumnDefinitions>  
+         <Grid.RowDefinitions>  
+             <RowDefinition Height="*"></RowDefinition>  
+         </Grid.RowDefinitions>  
+         <StackPanel Grid.Row="0" Grid.Column="0" Margin="5">
+            <TextBlock x:Name="lblid" Text="Id" ></TextBlock>
+            <TextBox x:Name="txtID" IsReadOnly="True"></TextBox>
+            <TextBlock x:Name="lblFirstName" Text="First Name"></TextBlock>
+            <TextBox x:Name="txtFirstName"></TextBox>
+            <TextBlock x:Name="lblLastName" Text="Last Name"></TextBlock>
+            <TextBox x:Name="txtLastName"></TextBox>
+            <Button Grid.Column="0" Width="100" Height="20" Margin="5,15,5,5" x:Name="btnGetSelected" Click="btn_cargar" Content="Cargar"></Button>
+            <Button Grid.Column="0" Width="100" Height="20" Margin="5" x:Name="btnInsert" Click="btnInsert_click" Content="Insertar"></Button>
+            <Button Grid.Column="0" Width="100" Height="20" Margin="5" x:Name="btnUpdate" Click="btnUpdate_click" Content="Actualizar"></Button>
+            <Button Grid.Column="0" Width="100" Height="20" Margin="5" x:Name="btnDelete" Click="btnDelete_click" Content="Eliminar"></Button>
+        </StackPanel>
+         <ListView x:Name="lstNames" Margin="5" Grid.Column="1" Grid.Row="0">  
+             <ListView.View>  
+                 <GridView x:Name="grdNames">
+                    <GridViewColumn Header="id"  DisplayMemberBinding="{Binding actor_id}"/>
+                    <GridViewColumn Header="First name"  DisplayMemberBinding="{Binding first_name}"/>
+                    <GridViewColumn Header="Last name"  DisplayMemberBinding="{Binding last_name}"/>
+                    <GridViewColumn Header="Last update"  DisplayMemberBinding="{Binding last_update}"/>
+                </GridView>  
+             </ListView.View>  
+         </ListView>  
+ </Grid>  
+</Window>

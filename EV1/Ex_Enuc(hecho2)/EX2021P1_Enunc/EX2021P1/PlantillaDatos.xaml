@@ -1,0 +1,100 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:EX2021P1">
+    
+    <DataTemplate x:Key="PlantillaJugadores">
+        <Border BorderThickness="1" BorderBrush="Black" Width="100">
+            <StackPanel OpacityMask="{x:Null}" Background="#4CFFFFFF">
+                <TextBlock Text="Nombre" Name="txtTitulo" FontWeight="Bold"></TextBlock>
+                <TextBlock Text="{Binding Nombre}" Name="txtNombreValue"></TextBlock>
+                <TextBlock Text="Puntos" Name="txtDescripcion" FontWeight="Bold"></TextBlock>
+                <TextBlock Text="{Binding Puntos}" Name="txtPuntosValue"></TextBlock>
+            </StackPanel>
+        </Border>
+    </DataTemplate>
+
+    <!--ANIMACIONES-->
+    <Style TargetType="Button">
+        <Setter Property="Foreground" Value="white"></Setter>
+    </Style>
+
+    <ControlTemplate x:Key="EstiloBoton" TargetType="Button" x:Name="spin">
+        <Grid>
+            <VisualStateManager.VisualStateGroups>
+                <VisualStateGroup Name="CommonStates">
+                    <VisualState Name="Normal">
+                        <Storyboard>
+                            <ColorAnimation Storyboard.TargetName="backgroundElement" 
+                            Storyboard.TargetProperty="(Shape.Fill).(SolidColorBrush.Color)"
+                            To="{TemplateBinding Background}"
+                            Duration="0:0:0.3"/>
+                        </Storyboard>
+                    </VisualState>
+                    <VisualState Name="MouseOver">
+                        <Storyboard>
+                            <ColorAnimation Storyboard.TargetName="backgroundElement" 
+                            Storyboard.TargetProperty="(Shape.Fill).(SolidColorBrush.Color)" 
+                            To="#AACB0255" 
+                            Duration="0:0:0.3"/>
+                        </Storyboard>
+                    </VisualState>
+                    <VisualState Name="Pressed">
+                        <Storyboard>
+                            <ColorAnimation Storyboard.TargetName="backgroundElement" 
+                            Storyboard.TargetProperty="(Shape.Fill).(SolidColorBrush.Color)" 
+                            To="#FFCB0255" 
+                            Duration="0:0:0.3"/>
+                        </Storyboard>
+                    </VisualState>
+                </VisualStateGroup>
+            </VisualStateManager.VisualStateGroups>
+            <Rectangle Name="backgroundElement" Fill="#FFCB0255" Stroke="#FF810225"
+                       StrokeThickness="3"
+                     >
+                <!--<Rectangle.Fill>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FFCB0255" Offset="0.5"/>
+                        <GradientStop Color="#FF810225" Offset="1"/>
+                        <GradientStop Color="#FF4F0016"/>
+                    </LinearGradientBrush>
+                </Rectangle.Fill>-->
+
+            </Rectangle>
+            <ContentPresenter x:Name="contentPresenter"
+                              HorizontalAlignment="Center"
+                              VerticalAlignment="Center" 
+                              
+                              />
+        </Grid>
+    </ControlTemplate>
+
+    <ControlTemplate x:Key="Spin" TargetType="Button">
+        <Grid>
+            <VisualStateManager.VisualStateGroups>
+                <VisualStateGroup Name="CommonStates">
+                    <VisualState Name="Normal">
+                        <Storyboard>
+                            <ColorAnimation Storyboard.TargetName="backgroundElement" 
+                            Storyboard.TargetProperty="(Shape.Fill).(SolidColorBrush.Color)"
+                            To="{TemplateBinding Background}"
+                            Duration="0:0:0.3"/>
+                        </Storyboard>
+                    </VisualState>
+                    <VisualState Name="MouseOver">
+                        <Storyboard>
+                            <ColorAnimation Storyboard.TargetName="backgroundElement" 
+                            Storyboard.TargetProperty="(Shape.Fill).(SolidColorBrush.Color)" 
+                            To="#FFCB0255"
+                            Duration="0:0:0.3"/>
+                        </Storyboard>
+                    </VisualState>
+                </VisualStateGroup>
+            </VisualStateManager.VisualStateGroups>
+            <Ellipse x:Name="backgroundElement" 
+                         Fill="{TemplateBinding Background}"
+                         Stroke="{TemplateBinding Foreground}" />
+            <ContentPresenter x:Name="contentPresenter" HorizontalAlignment="Center" VerticalAlignment="Center" />
+        </Grid>
+    </ControlTemplate>
+    
+</ResourceDictionary>

@@ -1,0 +1,122 @@
+﻿<Window x:Class="Enunciado2122P1.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Enunciado2122P1"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Window.Background>
+        <ImageBrush ImageSource="/fondo.jpg"/>
+    </Window.Background>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="4*"/>
+            <ColumnDefinition Width="4*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1.3*"/>
+            <RowDefinition Height="4*"/>
+            <RowDefinition Height="2*"/>
+        </Grid.RowDefinitions>
+        <!-- EJERCICIO 1 (1 punto) en MainWindow.xaml
+        Introduce en las celdas superiores del Grid general un Stack Panel que contenga
+        el título del programa "BOLERA WPF" con un tipo de letra "Harlow Solid Italic"
+        de tamaño llamativo, lo mejor centrado posible y con un color adecuado que permita leerse bien -->
+        <StackPanel Grid.Row="1" Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Center"
+                    Margin="10" Background="#7F000000">
+            <StackPanel VerticalAlignment="Center">
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                    <Ellipse x:Name="e_bolo_7" Width="20" Height="20" Fill="WhiteSmoke" Margin="10"/>
+                    <Ellipse x:Name="e_bolo_8" Width="20" Height="20" Fill="WhiteSmoke" Margin="10"/>
+                    <Ellipse x:Name="e_bolo_9" Width="20" Height="20" Fill="WhiteSmoke" Margin="10"/>
+                    <Ellipse x:Name="e_bolo_10" Width="20" Height="20" Fill="WhiteSmoke" Margin="10"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                    <Ellipse x:Name="e_bolo_4" Width="20" Height="20" Fill="WhiteSmoke" Margin="10"/>
+                    <Ellipse x:Name="e_bolo_5" Width="20" Height="20" Fill="WhiteSmoke" Margin="10"/>
+                    <Ellipse x:Name="e_bolo_6" Width="20" Height="20" Fill="WhiteSmoke" Margin="10"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                    <Ellipse x:Name="e_bolo_2" Width="20" Height="20" Fill="WhiteSmoke" Margin="10"/>
+                    <Ellipse x:Name="e_bolo_3" Width="20" Height="20" Fill="WhiteSmoke" Margin="10"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                    <Ellipse x:Name="e_bolo_1" Width="20" Height="20" Fill="WhiteSmoke" Margin="10"/>
+                </StackPanel>
+            </StackPanel>
+        </StackPanel>
+        <!-- EJERCICIO 2 (1.5 puntos) en MainWindow.xaml
+            Añade encima de la interfaz del marcador otros StackPanel con un conjunto de Textblock y Textbox
+            que reflejen en qué Tirada e Intento se encuentra el jugador en todo momento. -->
+        <StackPanel Grid.Row="1" Grid.Column="2" Background="#7F000000" VerticalAlignment="Bottom">
+            <ListBox ItemTemplate="{StaticResource PlantillaPuntos}"
+                ItemsSource="{Binding Marcador, Mode=TwoWay}"
+                IsSynchronizedWithCurrentItem="True"
+                Background="#7F000000">
+                <ListBox.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <WrapPanel IsItemsHost="True" />
+                    </ItemsPanelTemplate>
+                </ListBox.ItemsPanel>
+            </ListBox>
+            <TextBlock Text="Línea de tiro" FontSize="20" Foreground="#FFF0F0F0"/>
+            <Slider Name="sld_linea" HorizontalAlignment="Stretch"
+                    IsSnapToTickEnabled="True" 
+                    Value="{Binding LineaTiro}" Minimum="1" Maximum="7"/>
+            <TextBlock Text="Energía" FontSize="20" Foreground="#FFF0F0F0"/>
+            <Slider Name="sld_energia" HorizontalAlignment="Stretch" IsSnapToTickEnabled="True"
+                    Value="5" Minimum="1" Maximum="10"/>
+        </StackPanel>
+        <!-- EJERCICIO 3 (1 punto) en MainWindow.xaml y Estilos.xaml
+            El botón 'LANZAR' es algo feo... decóralo a tu criterio para que "case" con la estética de la interfaz.
+            Se recomienda el uso de un ‘Control Template’. -->
+        
+        <!-- EJERCICIO 7 (1.5 puntos) en MainWindow.xaml
+            Genera una animación en el botón 'LANZAR' -la que desees- que haga que el botón se mueva o se le altere
+            una propiedad (color, opacidad, tamaño, rotación...) al hacer click -->
+        <StackPanel Grid.Row="2" Grid.Column="2" Margin="10" VerticalAlignment="Center">
+            <Button Content="LANZAR" FontSize="30" Height="50" Click="Lanzar_Click" Template="{StaticResource EstiloBoton}"/>
+        </StackPanel>
+        <Label Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2" Content="Bolera WPF" VerticalAlignment="Center" 
+               HorizontalAlignment="Center" FontSize="50" FontFamily="Harlow Solid Italic" BorderBrush="#cc000000" BorderThickness="2" Background="#22FFFFFF"
+               >
+            <Label.Effect>
+                <DropShadowEffect Color="White" BlurRadius="1" Opacity="0.8" ShadowDepth="3"/>
+            </Label.Effect>
+        </Label>
+        <StackPanel Grid.Column="2" Grid.Row="1">
+            <StackPanel Orientation="Horizontal" Margin="5,5,5,0">
+                <TextBlock Text="Ronda: " TextWrapping="Wrap" FontFamily="Harlow Solid Italic" FontSize="30"/>
+                <TextBlock Text="{Binding TiradaActual}" TextWrapping="Wrap" FontFamily="Harlow Solid Italic" FontSize="30"/>
+            </StackPanel>            
+            <StackPanel Orientation="Horizontal" Margin="5,5,5,0">
+                <TextBlock Text="Intento: " TextWrapping="Wrap" FontFamily="Harlow Solid Italic" FontSize="30"/>
+                <TextBlock Text="{Binding IntentoActual}" TextWrapping="Wrap" FontFamily="Harlow Solid Italic" FontSize="30"/>
+            </StackPanel>
+
+        </StackPanel>
+
+        <StackPanel Grid.Row="1" Grid.Column="0"
+                    
+                    HorizontalAlignment="Left">
+            <Label Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2" Content="ScoreBoard" VerticalAlignment="Center" 
+               HorizontalAlignment="Center" BorderBrush="#cc000000" BorderThickness="2" Background="#22FFFFFF"
+               >
+                <Label.Effect>
+                    <DropShadowEffect Color="White" BlurRadius="1" Opacity="0.8" ShadowDepth="3"/>
+                </Label.Effect>
+            </Label>
+            <ListBox Name="puntuacionesList" 
+                     ItemsSource="{Binding PuntuacionesTotales, Mode=TwoWay}" 
+                     IsSynchronizedWithCurrentItem="True"
+                     Background="#69FFFFFF"/>
+        </StackPanel>
+        <!-- EJERCICIO 6 (2 puntos) en MainWindow.xaml y MainWindow.xaml.cs
+            Elabora una lista que vaya acumulando los resultados totales de cada partida completa que se juega. -->
+
+    </Grid>
+</Window>
+

@@ -1,0 +1,39 @@
+﻿<Window x:Class="ControlTemplateP1.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ControlTemplateP1"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800" Background="#FF121B25">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.2*"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.2*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="0" Grid.Column="0" Background="#FF0F111B"></StackPanel>
+        <StackPanel Grid.Row="1" Grid.Column="0" Background="#FF0F111B">
+            <Button Grid.Column="0" Grid.Row="1" Template="{StaticResource roundButton}"
+                Content="A" HorizontalAlignment="Stretch" 
+                VerticalAlignment="Top" Grid.RowSpan="2"
+                Height="62" FontWeight="Bold"
+                FontSize="18" Foreground="#FF00AEFF" Background="#FF1A2A3A" Margin="5,5,5,0"/>
+            <Button Grid.Column="0" Grid.Row="1" Template="{StaticResource roundButton}"
+                Content="R" HorizontalAlignment="Stretch" 
+                VerticalAlignment="Top" Grid.RowSpan="2"
+                Height="62" FontWeight="Bold"
+                FontSize="18" Foreground="#FF00AEFF" Background="#FF1A2A3A" Margin="5,5,5,0"/>
+            <Button Grid.Column="0" Grid.Row="1" Template="{StaticResource roundButton}"
+                Content="Z" HorizontalAlignment="Stretch" 
+                VerticalAlignment="Top" Grid.RowSpan="2"
+                Height="62" FontWeight="Bold"
+                FontSize="18" Foreground="#FF00AEFF" Background="#FF1A2A3A" Margin="5,5,5,0"/>
+
+        </StackPanel>
+    </Grid>
+</Window>

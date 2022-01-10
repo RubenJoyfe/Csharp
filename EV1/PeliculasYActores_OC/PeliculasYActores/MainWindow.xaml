@@ -1,0 +1,90 @@
+﻿<Window x:Class="PeliculasYActores.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PeliculasYActores"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="802" Width="840">
+    <Grid>
+        <Grid.Background>
+            <RadialGradientBrush>
+                <GradientStop Color="Black" Offset="1"/>
+                <GradientStop Color="#FFFFA040"/>
+            </RadialGradientBrush>
+        </Grid.Background>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="200" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Label Grid.Row="0" Grid.Column="0" Content="Películas" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="24"></Label>
+        <Label Grid.Row="0" Grid.Column="1" Content="Actores" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="24"></Label>
+        <ListBox Grid.Row="1" Grid.Column="0"
+                 Name="listBox1"
+                 ItemsSource="{Binding}" IsSynchronizedWithCurrentItem="True" Background="#4CFFFFFF"
+                 ItemTemplate="{StaticResource PlantillaPeliculas}"
+                 />
+        <ListBox Grid.Row="1" Grid.Column="1"
+                 Name="listBox2"
+                 ItemsSource="{Binding Path=CurrentItem.Actores}" Background="#4CFFFFFF"
+                 ItemTemplate="{StaticResource PlantillaActores}" />
+        <StackPanel Grid.Row="2" Grid.Column="0" Background="#4CFFFFFF">
+
+        </StackPanel>
+        <Grid Grid.Row="2" Grid.Column="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+            </Grid.RowDefinitions>
+
+
+            <Button Grid.Row="0" Grid.Column="1" x:Name="btnAddActor"
+            Content="Añadir Actor" FontSize="30" Click="btnAddActor_Click" Margin="2.5 5 5 2.5"/>
+            <Button Grid.Row="0" Grid.Column="0" x:Name="btnAddPeli"
+                Content="Añadir Película" FontSize="30" Click="btnAddPeli_Click" Margin="5 5 2.5 2.5"/>
+
+            <Button Grid.Row="1" Grid.Column="0" x:Name="btnRemovePeli"
+                Content="Eliminar Película" FontSize="30" Click="btnRemovePeli_Click" Margin="5 2.5 2.5 5"/>
+            <Button Grid.Row="1" Grid.Column="1" x:Name="btnRemoveActor"
+                Content="Eliminar Actor" FontSize="30" Click="btnRemoveActor_Click" Margin="2.5 2.5 5 5" />
+
+        </Grid>
+
+        <Grid Grid.Column="0" Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <StackPanel Grid.Column="0" Grid.Row="0">
+                <TextBlock Text="Título: " HorizontalAlignment="Center" />
+                <TextBox x:Name="tbTitulo" Width="150" />
+                <TextBlock Text="Descripción: " HorizontalAlignment="Center"/>
+                <TextBox x:Name="tbDesc" Width="150" />
+                <TextBlock Text="Año: " HorizontalAlignment="Center"/>
+                <TextBox x:Name="tbAnno" Width="150" />
+            </StackPanel>
+            <StackPanel Grid.Column="1" Grid.Row="0">
+                <TextBlock Text="Nombre: " HorizontalAlignment="Center" />
+                <TextBox x:Name="tbNombre" Width="150" />
+                <TextBlock Text="Biografía: " HorizontalAlignment="Center"/>
+                <TextBox x:Name="tbBiografia" Width="150" />
+                <TextBlock Text="Año de Nacimiento: " HorizontalAlignment="Center"/>
+                <TextBox x:Name="tbNacimiento" Width="150" />
+            </StackPanel>
+
+        </Grid>
+
+    </Grid>
+</Window>

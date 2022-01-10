@@ -1,0 +1,28 @@
+﻿<Window x:Class="ElementosVisuales.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ElementosVisuales"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="3*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="5*"/>
+        </Grid.RowDefinitions>
+        <!--<StackPanel Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Orientation="Vertical">-->
+         <StackPanel Grid.Row="0" Grid.Column="1" Grid.RowSpan="2" Orientation="Vertical">
+            <ComboBox></ComboBox>
+            <TextBlock Height="20" Text="To Do" FontSize="15" TextAlignment="Center"></TextBlock>
+            <CheckBox><TextBlock x:Name="bonjour" Text="Bonjour"/></CheckBox>
+            <Button Content="Texto del boton" HorizontalContentAlignment="Right" Click="verEdad"></Button>
+            
+        </StackPanel>
+
+    </Grid>
+</Window>

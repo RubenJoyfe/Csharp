@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v5.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v5.0": {
+      "Enunciado2122P1/1.0.0": {
+        "runtime": {
+          "Enunciado2122P1.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Enunciado2122P1/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

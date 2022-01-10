@@ -1,0 +1,98 @@
+﻿<Window x:Class="EX2021P1.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:EX2021P1"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="600" Width="800">
+
+    <Window.Background>
+        <ImageBrush ImageSource="fondo.jpg"/>
+    </Window.Background>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="2*" />
+            <ColumnDefinition Width="6*" />
+            <ColumnDefinition Width="2*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.5*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="0.5*" />
+        </Grid.RowDefinitions>
+        <!-- EJERCICIO 2 (2 punto) Añadir al Grid lo necesario para poner un título visible en la parte superior que ponga TRAGAPERRAS (a modo cabecera)
+                         con tipografía Papyrus de tamaño 72 y en Negrita
+                         NOTA: Puede que te haga cambiar los Grid.Row y Grid.Column de los StacksPanel o DockPanel
+                               SÍ, PUEDES MODIFICARLOS tranquilamente para que te cuadre-->
+        <StackPanel Grid.Row="0" Grid.Column="1"
+                    HorizontalAlignment="Left" VerticalAlignment="Bottom">
+            <Label FontSize="20">Puntos:</Label>
+            <TextBlock x:Name="tbPuntos" Text="0" FontSize="36"></TextBlock>
+        </StackPanel>
+        <StackPanel Grid.Row="1" Grid.Column="1" Orientation="Horizontal">
+            <Image x:Name="Slot1" Source="siete.png" Width="150"></Image>
+            <Image x:Name="Slot2" Source="siete.png" Width="150"></Image>
+            <Image x:Name="Slot3" Source="siete.png" Width="150"></Image>
+        </StackPanel>
+        <StackPanel Grid.Row="1" Grid.Column="2"
+                    Grid.RowSpan="1"
+                    HorizontalAlignment="Left">
+            <Label>Mejores Jugadores:</Label>
+            <ListBox Name="listBox1" ItemsSource="{Binding UpdateSourceTrigger=Explicit}" IsSynchronizedWithCurrentItem="True"
+					 ItemTemplate="{StaticResource PlantillaJugadores}"
+                     
+                     Background="Transparent"/>
+        </StackPanel>
+        <StackPanel Grid.Row="2" Grid.Column="1"
+                    Orientation="Horizontal"
+                    HorizontalAlignment="Right"
+                    VerticalAlignment="Center">
+            <!-- EJERCICIO 6 (0.5 puntos) El botón 'SPIN' es algo feo... decóralo a tu criterio para que "case"
+                                con la estética de la interfaz-->
+            <!-- EJERCICIO 7 (1.5 puntos) Genera una animación en el botón SPIN -la que desees- que haga que el botón se mueva o se le
+                             altere una propiedad (color, opacidad, tamaño, rotación...) con simplemente
+                             pasar el ratón por encima-->
+            <Button x:Name="Spin"
+                    Width="200" Height="60"
+                    Content="Spin" FontSize="24"
+                    Click="btnSpin" Foreground="#FFFFF4F4"
+                    Template="{StaticResource EstiloBoton}"
+                    >
+                <!--<Button.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FFCB0255" Offset="0.5"/>
+                        <GradientStop Color="#FF810225" Offset="1"/>
+                        <GradientStop Color="#FF4F0016"/>
+                    </LinearGradientBrush>
+                </Button.Background>-->
+            </Button>
+            <!-- EJERCICIO 3.a (1 punto) Crear un botón de Guardar que al ser pinchado tome el nombre del TextBox
+                           del EJERCICIO 1 y alimente la lista de puntuación de la derecha-->
+
+        </StackPanel>
+        <StackPanel Grid.Row="2" Grid.Column="2"
+                    Orientation="Vertical"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center"
+                    Background="#7FF5F5DC">
+            <!-- EJERCICIO 1 (1 punto) Introducir un Label junto a un TextBox para permitir meter un nombre-->
+            <Label>Nombre</Label>
+            <TextBox x:Name="Nombre" Width="100">
+
+            </TextBox>
+            <Button Content="Guardar" Width="auto" Click="Save_Click" Template="{StaticResource EstiloBoton}"/>
+        </StackPanel>
+        <Label Content="TRAGAPERRAS" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Top" FontFamily="Playbill" FontSize="72">
+            <Label.Effect>
+                <DropShadowEffect Color="White" BlurRadius="2"/>
+            </Label.Effect>
+            <Label.Foreground>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF302525" Offset="0"/>
+                    <GradientStop Color="#FFFD4646" Offset="1"/>
+                </LinearGradientBrush>
+            </Label.Foreground>
+        </Label>
+    </Grid>
+</Window>
