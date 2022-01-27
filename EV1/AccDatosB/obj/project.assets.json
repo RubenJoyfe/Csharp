@@ -854,11 +854,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\admin-dam2b\\Documents\\Csharp\\AccDatosB\\AccDatosB.csproj",
+      "projectUniqueName": "C:\\Users\\admin-dam2b\\Documents\\GitHub\\Csharp\\EV1\\AccDatosB\\AccDatosB.csproj",
       "projectName": "AccDatosB",
-      "projectPath": "C:\\Users\\admin-dam2b\\Documents\\Csharp\\AccDatosB\\AccDatosB.csproj",
+      "projectPath": "C:\\Users\\admin-dam2b\\Documents\\GitHub\\Csharp\\EV1\\AccDatosB\\AccDatosB.csproj",
       "packagesPath": "C:\\Users\\admin-dam2b\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\admin-dam2b\\Documents\\Csharp\\AccDatosB\\obj\\",
+      "outputPath": "C:\\Users\\admin-dam2b\\Documents\\GitHub\\Csharp\\EV1\\AccDatosB\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\admin-dam2b\\AppData\\Roaming\\NuGet\\NuGet.Config",

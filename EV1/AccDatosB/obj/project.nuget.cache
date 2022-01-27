@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "yy9MSXeDCdWiV0ULlhFHHiluFqZ5mG07v2CeiV3jz1xIJXj1tfcAenrONZbJyZIwAKBm4mXddAoaSNlvo78OFw==",
+  "dgSpecHash": "9BzPNbZqXbB6Zg0iokgwpHzQeIOchsS6sdP0v1iNVXV/2tN/Xw8AVaInZmzBMoHyaXmAn/ibKQLTBep3aofirg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\admin-dam2b\\Documents\\Csharp\\AccDatosB\\AccDatosB.csproj",
+  "projectFilePath": "C:\\Users\\admin-dam2b\\Documents\\GitHub\\Csharp\\EV1\\AccDatosB\\AccDatosB.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\admin-dam2b\\.nuget\\packages\\bouncycastle.netcore\\1.8.5\\bouncycastle.netcore.1.8.5.nupkg.sha512",
     "C:\\Users\\admin-dam2b\\.nuget\\packages\\google.protobuf\\3.14.0\\google.protobuf.3.14.0.nupkg.sha512",

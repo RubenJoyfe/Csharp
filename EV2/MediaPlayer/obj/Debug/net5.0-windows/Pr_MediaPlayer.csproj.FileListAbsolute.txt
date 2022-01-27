@@ -1,0 +1,5 @@
+C:\Users\admin-dam2b\Documents\GitHub\Csharp\EV2\MediaPlayer\obj\Debug\net5.0-windows\Pr_MediaPlayer.csproj.AssemblyReference.cache
+C:\Users\admin-dam2b\Documents\GitHub\Csharp\EV2\MediaPlayer\obj\Debug\net5.0-windows\MainWindow.g.cs
+C:\Users\admin-dam2b\Documents\GitHub\Csharp\EV2\MediaPlayer\obj\Debug\net5.0-windows\App.g.cs
+C:\Users\admin-dam2b\Documents\GitHub\Csharp\EV2\MediaPlayer\obj\Debug\net5.0-windows\Pr_MediaPlayer_MarkupCompile.cache
+C:\Users\admin-dam2b\Documents\GitHub\Csharp\EV2\MediaPlayer\obj\Debug\net5.0-windows\Pr_MediaPlayer_MarkupCompile.lref
